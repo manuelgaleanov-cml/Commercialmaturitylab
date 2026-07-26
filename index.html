@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Commercial Maturity Lab helps financial-services organizations build commercial capabilities for the AI era.">
+  <title>Commercial Maturity Lab™</title>
+  <style>
+    :root{
+      --navy:#061a33;--navy2:#0b2c54;--blue:#143f70;--gold:#d6a848;
+      --ink:#102038;--muted:#64748b;--paper:#f6f2ec;--white:#fff;--line:#dbe3ec;
+      --shadow:0 24px 60px rgba(4,21,42,.16);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{color:var(--gold);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:.78rem}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;margin:0}
+    h1{font-size:clamp(2.6rem,6vw,5.5rem);line-height:.95;letter-spacing:-.045em}
+    h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05}
+    p{line-height:1.65}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:8px;font-weight:800;font-size:.9rem;border:1px solid transparent}
+    .btn.gold{background:var(--gold);color:#071a33}
+    .btn.outline{border-color:rgba(255,255,255,.45);color:#fff}
+    .btn.dark{background:var(--navy);color:#fff}
+    header{position:sticky;top:0;z-index:20;background:rgba(6,26,51,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:900;letter-spacing:.02em}
+    .brand img{width:44px;height:44px}
+    .brand small{display:block;color:var(--gold);font-size:.58rem;margin-top:3px}
+    .links{display:flex;gap:24px;color:#dbe7f5;font-size:.85rem;font-weight:700}
+    .hero{background:linear-gradient(105deg,var(--navy) 0%,var(--navy) 46%,rgba(6,26,51,.62) 64%,rgba(6,26,51,.12) 100%),url('assets/hero-team.jpg') center right/cover no-repeat;color:#fff;min-height:650px;display:grid;align-items:center}
+    .hero-copy{max-width:650px;padding:90px 0}
+    .hero h1 span{color:#efc15f}
+    .hero p{font-size:1.12rem;color:#d9e4f1;max-width:590px;margin:26px 0 30px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap}
+    .proof{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-42px;position:relative;z-index:3;background:#fff;box-shadow:var(--shadow);border-radius:16px;overflow:hidden}
+    .proof div{padding:24px;border-right:1px solid var(--line)}
+    .proof div:last-child{border:0}
+    .proof strong{font-size:1.8rem;color:var(--navy);display:block}
+    .proof span{color:var(--muted);font-size:.88rem}
+    section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
+    .section-head p{max-width:560px;color:var(--muted);margin:0}
+    .capabilities{background:#f7f9fc}
+    .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .cap{background:#fff;border:1px solid var(--line);padding:24px;min-height:205px;border-radius:14px;transition:.25s}
+    .cap:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(8,34,64,.10)}
+    .num{color:var(--gold);font-weight:900;margin-bottom:36px}
+    .cap h3{font-size:1.25rem;margin-bottom:10px}
+    .cap p{font-size:.9rem;color:var(--muted);margin:0}
+    .framework{background:var(--navy);color:#fff}
+    .framework-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .framework p{color:#c9d9ea}
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .node{background:linear-gradient(180deg,#123c6a,#0b284a);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:22px 14px;text-align:center;min-height:130px;display:grid;place-items:center}
+    .node strong{display:block}
+    .node small{color:#a9c4df}
+    .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 12px 34px rgba(10,38,69,.07)}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card-body{padding:22px}
+    .card h3{font-size:1.4rem;margin-bottom:10px}
+    .card p{color:var(--muted);font-size:.94rem}
+    .read{color:#a36d00;font-weight:900;font-size:.86rem}
+    .latam{background:var(--paper)}
+    .country-grid,.solution-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .country,.solution{background:#fff;border:1px solid #e4ded5;border-radius:14px;overflow:hidden}
+    .country img,.solution img{height:150px;width:100%;object-fit:cover}
+    .country div,.solution div{padding:18px}
+    .country strong,.solution strong{font-family:Georgia,serif;font-size:1.18rem}
+    .country p,.solution p{color:var(--muted);font-size:.85rem;margin-bottom:0}
+    .papers{background:#fff}
+    .paper-row{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:stretch}
+    .paper-feature{background:linear-gradient(135deg,var(--navy),#123d6b);color:#fff;border-radius:18px;padding:42px;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+    .paper-feature p{color:#ccdaea}
+    .paper-meta{display:flex;gap:12px;flex-wrap:wrap}
+    .paper-meta span{border:1px solid rgba(255,255,255,.25);padding:8px 10px;border-radius:999px;font-size:.75rem}
+    .newsletter{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(90deg,rgba(6,26,51,.96),rgba(6,26,51,.55)),url('assets/newsletter-city.jpg') center/cover;color:#fff;padding:44px}
+    .newsletter p{color:#d6e2ef}
+    form{display:flex;gap:10px;margin-top:20px}
+    input{flex:1;padding:14px 15px;border:0;border-radius:8px;font:inherit}
+    footer{background:#041426;color:#d2deec;padding:52px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
+    footer h4{color:#fff;margin-top:0}
+    footer a{display:block;margin:9px 0;color:#b7c8da;font-size:.88rem}
+    .legal{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:#8fa5bb}
+    @media(max-width:900px){
+      .links{display:none}.hero{background-position:62% center}.hero-copy{padding:80px 0}
+      .proof{grid-template-columns:repeat(2,1fr);margin-top:0}
+      .cap-grid,.country-grid,.solution-grid{grid-template-columns:repeat(2,1fr)}
+      .framework-wrap,.paper-row{grid-template-columns:1fr}
+      .research-grid{grid-template-columns:1fr}
+      .flow{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .container{width:min(100% - 24px,1180px)}nav{height:66px}.brand span{font-size:.8rem}
+      .hero{min-height:600px;background:linear-gradient(180deg,rgba(6,26,51,.88),rgba(6,26,51,.94)),url('assets/hero-team.jpg') center/cover}
+      .hero-copy{padding:65px 0}.proof,.cap-grid,.country-grid,.solution-grid,.flow,.footer-grid{grid-template-columns:1fr}
+      .section-head{display:block}.section-head p{margin-top:16px}section{padding:66px 0}
+      form{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">
+        <img src="assets/logo.svg" alt="Commercial Maturity Lab logo">
+        <span>COMMERCIAL MATURITY LAB™<small>THE COMMERCIAL MATURITY PLAYBOOK™</small></span>
+      </a>
+      <div class="links">
+        <a href="#playbook">Playbook</a><a href="#framework">Framework</a><a href="#research">Research</a>
+        <a href="#insights">Insights</a><a href="#solutions">Solutions</a><a href="#papers">Papers</a>
+      </div>
+      <a class="btn gold" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow">Building commercial capabilities for the AI era</div>
+      <h1>Transforming commercial capabilities with <span>AI, Data & Open Finance.</span></h1>
+      <p>Research, frameworks and practical tools for financial-services leaders seeking sustainable client growth across Latin America.</p>
+      <div class="actions">
+        <a class="btn gold" href="#playbook">Explore the Playbook</a>
+        <a class="btn outline" href="#framework">View the Framework</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container proof">
+  <div><strong>8</strong><span>Commercial capabilities</span></div>
+  <div><strong>4</strong><span>Financial-services solutions</span></div>
+  <div><strong>LATAM</strong><span>Regional perspective</span></div>
+  <div><strong>1</strong><span>Integrated commercial system</span></div>
+</div>
+
+<section id="playbook" class="capabilities">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">The Playbook</div><h2>Eight capabilities. One commercial system.</h2></div>
+      <p>A clear visual architecture for moving from isolated initiatives to coordinated, repeatable commercial performance.</p>
+    </div>
+    <div class="cap-grid">
+      <article class="cap"><div class="num">01</div><h3>Customer Centricity</h3><p>Design decisions around client needs, trust and lifetime value.</p></article>
+      <article class="cap"><div class="num">02</div><h3>Demand Generation</h3><p>Create qualified demand through insight-led content and journeys.</p></article>
+      <article class="cap"><div class="num">03</div><h3>Commercial Effectiveness</h3><p>Improve pipeline discipline, forecasting and sales execution.</p></article>
+      <article class="cap"><div class="num">04</div><h3>Sales Excellence</h3><p>Build repeatable practices, coaching and performance management.</p></article>
+      <article class="cap"><div class="num">05</div><h3>Customer Growth</h3><p>Increase retention, engagement, share of wallet and advocacy.</p></article>
+      <article class="cap"><div class="num">06</div><h3>AI & Data</h3><p>Turn information into better decisions, prioritization and scale.</p></article>
+      <article class="cap"><div class="num">07</div><h3>Open Finance</h3><p>Use connected ecosystems to create richer client propositions.</p></article>
+      <article class="cap"><div class="num">08</div><h3>Continuous Transformation</h3><p>Embed governance, culture and learning into everyday execution.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="framework" class="framework">
+  <div class="container framework-wrap">
+    <div>
+      <div class="eyebrow">Commercial Integration Framework™</div>
+      <h2>A connected path from client insight to sustainable growth.</h2>
+      <p>The framework links market understanding, demand creation, commercial execution and customer growth, supported by AI, data, Open Finance, technology and governance.</p>
+      <a class="btn gold" href="#papers">Explore the full framework</a>
+    </div>
+    <div class="flow" aria-label="Commercial Integration Framework">
+      <div class="node"><div><strong>Client</strong><small>Needs & value</small></div></div>
+      <div class="node"><div><strong>Demand</strong><small>Attention & intent</small></div></div>
+      <div class="node"><div><strong>Execution</strong><small>Pipeline & conversion</small></div></div>
+      <div class="node"><div><strong>Growth</strong><small>Retention & expansion</small></div></div>
+      <div class="node"><div><strong>AI</strong><small>Decision support</small></div></div>
+      <div class="node"><div><strong>Open Finance</strong><small>Connected propositions</small></div></div>
+      <div class="node"><div><strong>Data</strong><small>Customer intelligence</small></div></div>
+      <div class="node"><div><strong>Governance</strong><small>Culture & accountability</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Research highlights</div><h2>Ideas translated into commercial action.</h2></div>
+      <p>Executive research designed to help leaders understand what is changing, why it matters and what to do next.</p>
+    </div>
+    <div class="research-grid">
+      <article class="card"><img src="assets/wealth-ai.jpg" alt="AI-generated financial advisory scene"><div class="card-body"><h3>AI in Wealth Management</h3><p>How AI can elevate advisory, personalization, productivity and client lifetime value.</p><a class="read" href="#papers">Read more →</a></div></article>
+      <article class="card"><img src="assets/commercial-transformation.jpg" alt="AI-generated executive transformation team"><div class="card-body"><h3>Commercial Transformation</h3><p>Moving from strategy to execution through an integrated operating model.</p><a class="read" href="#papers">Read more →</a></div></article>
+      <article class="card"><img src="assets/open-finance.jpg" alt="AI-generated connected financial ecosystem"><div class="card-body"><h3>Open Finance Ecosystems</h3><p>Turning connectivity, data portability and partnerships into customer value.</p><a class="read" href="#papers">Read more →</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="insights" class="latam">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">LATAM Insights</div><h2>Learning from the region. Scaling to the world.</h2></div>
+      <p>Regional developments interpreted through the lens of commercial maturity and financial services.</p>
+    </div>
+    <div class="country-grid">
+      <article class="country"><img src="assets/latam-brazil.jpg" alt="AI-generated São Paulo business district"><div><strong>Brazil</strong><p>Open Finance at scale and ecosystem-based growth.</p></div></article>
+      <article class="country"><img src="assets/latam-mexico.jpg" alt="AI-generated Mexico City business district"><div><strong>Mexico</strong><p>Commercial modernization in a rapidly digitizing market.</p></div></article>
+      <article class="country"><img src="assets/latam-chile.jpg" alt="AI-generated Santiago business district"><div><strong>Chile</strong><p>Asset management, advice and data-led client experiences.</p></div></article>
+      <article class="country"><img src="assets/latam-colombia.jpg" alt="AI-generated Bogotá business district"><div><strong>Colombia</strong><p>Wealth management, Open Finance and trusted growth.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="solutions">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Industry solutions</div><h2>Built for financial-services realities.</h2></div>
+      <p>Practical application of the playbook across four priority segments.</p>
+    </div>
+    <div class="solution-grid">
+      <article class="solution"><img src="assets/solution-wealth.jpg" alt="AI-generated wealth advisory meeting"><div><strong>Wealth Management</strong><p>Advice, personalization and relationship growth.</p></div></article>
+      <article class="solution"><img src="assets/solution-asset.jpg" alt="AI-generated asset management analytics team"><div><strong>Asset Management</strong><p>Distribution, intelligence and institutional growth.</p></div></article>
+      <article class="solution"><img src="assets/solution-private.jpg" alt="AI-generated private banking conversation"><div><strong>Private Banking</strong><p>High-value service, relevance and trust.</p></div></article>
+      <article class="solution"><img src="assets/solution-insurance.jpg" alt="AI-generated family insurance conversation"><div><strong>Insurance</strong><p>Protection journeys, loyalty and customer lifetime value.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="papers" class="papers">
+  <div class="container paper-row">
+    <article class="paper-feature">
+      <div>
+        <div class="eyebrow">Executive Paper #001</div>
+        <h2>Building Commercial Capabilities before Artificial Intelligence.</h2>
+        <p>Why the organizations that benefit most from AI first strengthen customer orientation, processes, governance, data and commercial discipline.</p>
+        <div class="paper-meta"><span>Executive perspective</span><span>Practical framework</span><span>LATAM relevance</span></div>
+      </div>
+      <div><a class="btn gold" href="#contact">Join the launch list</a></div>
+    </article>
+    <aside id="contact" class="newsletter">
+      <div class="eyebrow">Commercial Maturity Newsletter</div>
+      <h2>Insights delivered to your inbox.</h2>
+      <p>Research, frameworks and practical tools for leaders building the commercial organizations of the future.</p>
+      <form onsubmit="event.preventDefault();document.getElementById('thanks').textContent='Thank you. You are on the launch list.'">
+        <input aria-label="Email address" type="email" placeholder="Your email address" required>
+        <button class="btn gold" type="submit">Subscribe</button>
+      </form>
+      <p id="thanks" aria-live="polite"></p>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="brand"><img src="assets/logo.svg" alt=""><span>COMMERCIAL MATURITY LAB™</span></div><p>Research and practical frameworks for commercial transformation in financial services.</p></div>
+      <div><h4>Explore</h4><a href="#playbook">Playbook</a><a href="#framework">Framework</a><a href="#research">Research</a></div>
+      <div><h4>Solutions</h4><a href="#solutions">Wealth Management</a><a href="#solutions">Asset Management</a><a href="#solutions">Private Banking</a></div>
+      <div><h4>Contact</h4><a href="#contact">Newsletter</a><a href="https://www.linkedin.com" rel="noopener">LinkedIn</a><a href="mailto:hello@commercialmaturitylab.com">Email</a></div>
+    </div>
+    <div class="legal">© 2026 Commercial Maturity Lab™. All visuals are original AI-generated assets created for this website. Names and frameworks identified with ™ are proprietary project designations.</div>
+  </div>
+</footer>
+</body>
+</html>
