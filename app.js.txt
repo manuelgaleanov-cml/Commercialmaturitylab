@@ -1,1 +1,0 @@
-document.addEventListener('DOMContentLoaded',()=>console.log('Commercial Maturity Lab listo'));
